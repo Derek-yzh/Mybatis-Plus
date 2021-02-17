@@ -1,0 +1,31 @@
+#项目启动端口
+server:
+  port: 8000
+#数据源配置
+spring:
+  datasource:
+    #serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    password: root
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#配置mybatis-xml文件
+#mybatis:
+#  mapper-locations:
+#    - classpath:mapper/*.xml
+
+#sql语句日志打印
+logging:
+  level:
+    com:
+      mashibing:
+        mapper: debug
+
+mybatis-plus:
+  #mybatis-plus日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #配置xml文件
+  mapper-locations:
+    - classpath:mapper/*.xml
